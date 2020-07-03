@@ -1,0 +1,12 @@
+name: SaatchiMaps
+title: SaatchiMaps
+username:
+account: davelorino
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1968462
+bundleId: 2900019
+url: https://davelorino.shinyapps.io/SaatchiMaps/
+when: 1584659616.4658
+asMultiple: FALSE
+asStatic: FALSE
