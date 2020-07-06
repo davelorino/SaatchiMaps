@@ -32,7 +32,7 @@ saatchiBigramize <- function(df){
 }
 
 bing_sentiments <- tidytext::get_sentiments("bing")
-afinn_sentiments <- tidytext::get_sentiments("afinn")
+#afinn_sentiments <- tidytext::get_sentiments("afinn")
 
 glossary <- data.frame(Tab = c("Tables", "Tables", "Tables",
                                "Visualizations", "Visualizations",
@@ -191,7 +191,7 @@ server <- shinyServer(function(input, output) {
             maps_data_grouped_subregion <- reactive({
                 maps_data2() %>%
                     unnest_tokens(word, Cleaned_Hit_Sentence) %>%
-                    inner_join(get_sentiments("afinn")) %>%
+                    inner_join(get_sentiments("nrc")) %>%
                     group_by(State_Cleaned, word) %>%
                     summarise(occurences = n(), `sentiment score` = mean(value)) %>%
                     dplyr::ungroup() %>%
